@@ -10,15 +10,15 @@ const Cards = ({ plantData }) => {
     <View style={styles.card}>
       <Text style={styles.name}>{plantData.Name}</Text>
       <View style={styles.detailsContainer}>
-        <Stat label="Temperature" value={plantData.Temperature} color="#fa7272" iconName="thermostat" />
-        <Stat label="Moisture" value={plantData.Moisture} color="#4682B4" iconName="opacity" />
+        <Stat label="Temperature" value={plantData.Temperature} tempsymbol='°C' color="#fa7272" iconName="thermostat" />
+        <Stat label="Moisture" value={plantData.Moisture} moissymbol='%'  color="#4682B4" iconName="opacity" />
       </View>
       <Text style={styles.healthCondition}>{healthCondition}</Text>
     </View>
   );
 };
 
-const Stat = ({ label, value, color, iconName }) => (
+const Stat = ({ label, value, tempsymbol,moissymbol ,color, iconName }) => (
   <View style={styles.stat}>
     <Text style={styles.statlabel}>{label}</Text>
     <View style={styles.circularProgressContainer}>
@@ -35,6 +35,8 @@ const Stat = ({ label, value, color, iconName }) => (
       
       <View style={styles.iconContainer}>
         <MaterialIcons name={iconName} size={17} color={color} />
+        <Text style={styles.mois}>{moissymbol}</Text>
+        <Text style={styles.temp}>{tempsymbol}</Text>
         <Text style={styles.statValue}>{value}</Text>
       </View>
     </View>
@@ -47,8 +49,8 @@ const styles = StyleSheet.create({
     borderColor: '#699e6e',
     borderRadius: 8,
     padding: 10,
-    marginVertical: 5,
-    width: 150,
+    marginVertical: 7,
+    width: 160,
     height: 200, // Adjusted height to accommodate the health condition message
     maxWidth: 300,
     backgroundColor: '#a3d8aa', // Background color of the card
@@ -78,14 +80,28 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     position: 'absolute',
-    top: '50%',
+    top: '40%',
     left: '55%',
     transform: [{ translateX: -12 }, { translateY: -12 }], // Adjust position to center the icon
   },
   statValue: {
     fontSize: 11,
+    bottom:20,
     fontWeight: 'bold',
     color: '#273d2c', // Text color of the value
+  },
+  temp:{
+    fontSize: 8,
+    left:13,
+    bottom:7,
+
+
+  },
+  mois:{
+    fontSize: 8,
+    left:13,
+    top:3,
+
   },
   statlabel:{
     fontSize: 11,
