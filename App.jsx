@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding: 19,
   },
   appBar: {
-    backgroundColor: '#a3d8aa', // Background color of the app bar
+    backgroundColor: '#447154', // Background color of the app bar
   },
   appBarTitle: {
     color: '#294834', // Text color of the app bar title
