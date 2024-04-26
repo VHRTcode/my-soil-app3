@@ -69,7 +69,7 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#447154', // Background color of the app #699e6e
+    backgroundColor:'#699e6e', // Background color of the app #699e6e
   },
   content: {
     flex: 1,
